@@ -1,9 +1,13 @@
 import { ClerkProvider } from "@clerk/nextjs"
 import { Inter } from "next/font/google"
 import "../globals.css"
+import Head from "next/head"
 
 export const metadata = {
-  title: "Threads",
+  icons: {
+    icon: "/icon.ico"
+  },
+  title: "Threads | @wjbetech",
   description: "Next.js13 Threads Clone"
 }
 
@@ -17,9 +21,12 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${interFont.className} bg-dark-1`}>
-          {children}
-        </body>
+        <Head>
+          <link rel="icon" href="/icon.png" className="rounded-full" />
+        </Head>
+          <body className={`${interFont.className} bg-dark-1`}>
+            {children}
+          </body>
       </html>
     </ClerkProvider>
   )
